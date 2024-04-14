@@ -9,20 +9,93 @@
     href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
     rel="stylesheet"
 />
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" as="script">
 <link rel="icon" type="image/x-icon" href="Screenshot 2024-04-13 155401.ico">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 <body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+     function randomValues() {
+  anime({
+    targets: '.square, .circle, .triangle',
+    translateX: function() {
+      return anime.random(-500, 500);
+    },
+		translateY: function() {
+      return anime.random(-300, 300);
+    },
+		rotate: function() {
+			return anime.random(0, 360);
+		},
+		scale: function() {
+			return anime.random(.2, 2);
+		},
+    duration: 1500,
+		easing: 'easeInOutQuad',
+    complete: randomValues,
+	});
+}
+
+randomValues();
+});
+
+randomValues();
+    function handleClick() {
+        const sidebar=document.querySelector('.sidebar');
+        sidebar.style.display='flex';
+    }
+    function handleClick2() {
+        const sidebar=document.querySelector('.sidebar');
+        sidebar.style.display='none';
+    }
+
+   
+</script>
   <div class="main">
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="triangle"></div>
+    <div class="sidebar">
+      
+      <!-- <h2> The DuBuggers</h2> -->
+      <i class="ri-contract-right-fill" onclick="handleClick2()"></i>
+        <!-- <div class="nav2"> -->
+         
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <button>SignUp</button>
+          <!-- <i class="ri-menu-3-fill"></i> -->
+        <!-- </div> -->
+      
+    </div>
     <div class="nav">
       
       <h2> The DuBuggers</h2>
         <div class="nav2">
          
-          <h4 >Home</h4>
-          <h4 >About</h4>
-          <h4 >Contact</h4>
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
           <button>SignUp</button>
-          <i class="ri-menu-3-fill"></i>
+        <!-- <i class="ri-menu-3-fill"></i> -->
+        <i class="ri-menu-3-fill" onclick="handleClick()"></i>
+
         </div>
       
     </div>
